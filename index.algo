@@ -1,0 +1,28 @@
+ALGORITHM algorithm_name
+VAR
+   nc,nv,nm:INTEGER;
+    nc:=0;
+    nm:=1;
+    nv=0;
+
+   c:STRING;
+
+BEGIN
+  read(c)
+     WHILE (c<>".") DO
+ 
+       IF (c= " ") THEN
+          nm=nm+1
+       END_IF
+       IF (c in["a","e","i","u","o","y","A","E","I","U","O","Y"]) THEN
+        nv=nv+1
+       END_IF
+       IF (c<>" ") THEN
+       nc=nc+1
+       END_IF
+     END_WHILE
+
+     write("the number of characters:",nc)
+     write("The number of words:",nm)
+     write("The number of vowels :",nv)
+END
