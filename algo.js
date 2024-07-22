@@ -1,5 +1,5 @@
 
-/*function fetchdata() {
+function fetchdata() {
     setTimeout( () => {
     fetch('https://fakestoreap.com/products/1').then((data)=>
     console.log(data)).catch((err)=>console.log(err))},2000)
@@ -15,11 +15,11 @@ async function waitCall() {
       console.log("Err");
     }
   }
-  waitCall();*/
+  //waitCall()
 
   async function waitCall() {
 
-    setTimeout(async () => {
+  
         try{
             const response = await fetch('https://fakestoreapi.com/products/1');
             const responseData = await response.json();
@@ -28,23 +28,88 @@ async function waitCall() {
         }catch(error)
         {
             console.error("Erreur lors de la récupération des données de l'API :", error.message);
-        }
-       
-      }, 2000 );
-   
+        }  
 }
-//waitCall()
+/*
+// Example Task
+const promise1 = Promise.resolve('Promise 1 resolved');
+const promise2 = new Promise((resolve) => setTimeout(resolve, 2000, 'Promise 2 resolved'));
+const promise3 = new Promise((resolve) => setTimeout(resolve, 1000, 'Promise 3 resolved'));
+
+Promise.all([promise1, promise2, promise3])
+  .then(values => {
+    console.log(values);
+  });
+*/
+async function api1() {
+  return new Promise((resolve) => 
+    setTimeout(() => {
+      fetch('https://fakestoreapi.com/products/1')
+        .then((data) => data.json())
+        .then((data) => {
+          console.log(data);
+          resolve('Promise 1 resolved');
+        })
+        .catch((err) => {
+          console.log(err);
+          resolve('Promise 1 failed');
+        });
+    }, 2000)
+  );
+}
+
+async function api2() {
+  return new Promise((resolve) => 
+    setTimeout(() => {
+      fetch('https://fakestoreapi.com/products/2')
+        .then((data) => data.json())
+        .then((data) => {
+          console.log(data);
+          resolve('Promise 2 resolved');
+        })
+        .catch((err) => {
+          console.log(err);
+          resolve('Promise 2 failed');
+        });
+    }, 2000)
+  );
+}
+
+async function api3() {
+  return new Promise((resolve) => 
+    setTimeout(() => {
+      fetch('https://fakestoreapi.com/products/3')
+        .then((data) => data.json())
+        .then((data) => {
+          console.log(data);
+          resolve('Promise 3 resolved');
+        })
+        .catch((err) => {
+          console.log(err);
+          resolve('Promise 3 failed');
+        });
+    }, 2000)
+  );
+}
+
+Promise.all([api1(), api2(), api3()])
+  .then((values) => {
+    console.log(values);
+  })
+ 
 
 
-async function iterateWithAsyncAwait(key) {
+
+
+function iterateWithAsyncAwait(key) {
 
    switch (key) {
-    default : return "Go";
-    case 1: return "My";
-   case 2: return "Code";
+    default :console.log('go'); ;
+    case 1:console.log('my'); 
+   case 2: console.log('code'); 
    }}
  // iterateWithAsyncAwait(3)
-
+ //console.log(iterateWithAsyncAwait(3));
 
 
 
@@ -115,4 +180,4 @@ function PowerFunction(n,pow) {
   return PowerFunction(n,pow-1)*n
   
 }
-console.log(PowerFunction(-5,3));
+//console.log(PowerFunction(-5,3));
