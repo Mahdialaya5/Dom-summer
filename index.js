@@ -17,3 +17,4 @@ changeColorBtn.addEventListener("click",function random() {
   colorBox.style.backgroundColor=color 
 
 })
+

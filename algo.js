@@ -104,11 +104,12 @@ Promise.all([api1(), api2(), api3()])
 function iterateWithAsyncAwait(key) {
 
    switch (key) {
-    default :console.log('go'); ;
+    default :console.log('go'); 
     case 1:console.log('my'); 
    case 2: console.log('code'); 
+   
    }}
- // iterateWithAsyncAwait(3)
+ iterateWithAsyncAwait(1)
  //console.log(iterateWithAsyncAwait(3));
 
 
