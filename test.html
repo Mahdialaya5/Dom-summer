@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="">
+	<meta name="viewport" content="width=, initial-scale=">
+	<title></title>
+</head>
+
+<body>
+	<div class="d-flex h-100">
+		<p>try pressing some keys:</p>
+		<p id="log"></p>
+	</div>
+	<script>
+		document.addEventListener('keydown', logKey);
+    	function logKey(e) {
+      	log.textContent += " " + e.code;
+    	}
+	</script>
+</body>
+
+</html>
